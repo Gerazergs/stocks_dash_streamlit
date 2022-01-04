@@ -65,11 +65,17 @@ else:
 if Filter_2 != 'Max%':
     Filter_2 = int(Filter_2.replace('%',''))/100
     df =df[df['riesgo']<Filter_2]
+    df = df.sort_values(['sharpie', 'teynor'], ascending = False)
+    df = df.iloc[0:Filter_3,:]
+    st.table(df)
+else:
+    df = df.sort_values(['sharpie', 'teynor'], ascending = False)
+    df = df.iloc[0:Filter_3,:]
+    st.table(df)
 
-df = df.sort_values(['sharpie', 'teynor'], ascending = False)
-df = df.iloc[0:Filter_3,:]
 
-st.table(df)
+
+
 
 row2_spacer1, row2_spacer3 = st.columns(
     (.1, .03)
