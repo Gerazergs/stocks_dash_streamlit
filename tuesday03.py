@@ -47,7 +47,7 @@ Filter_2 = st.sidebar.selectbox(
 
 Filter_3 = st.sidebar.selectbox(
     "select top sharpe and treynor results",
-    (range(6,50,2))
+    (range(6,30,2))
 )
 
 
