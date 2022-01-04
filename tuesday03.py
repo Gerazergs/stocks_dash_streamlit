@@ -77,8 +77,8 @@ else:
 
 
 
-row2_spacer1, row2_spacer3 = st.columns(
-    (.1, .0001)
+row2_spacer1, row2_spacer2, row2_spacer3 = st.columns(
+    (.1, .1,.1)
     )
 
 
