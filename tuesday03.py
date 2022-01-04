@@ -66,7 +66,7 @@ else:
 df = df.sort_values(['sharpie', 'teynor'], ascending = False)
 df = df.iloc[0:6,:]
 
-st.table(df.head())
+st.table(df)
 
 row2_spacer1, row2_spacer3 = st.columns(
     (.1, .03)
