@@ -90,7 +90,7 @@ with row2_spacer1:
                 df4,
                 x='Symbol', y='GICS Sector',
             )
-    figura.update_layout(height=300, width=600, title_text=f'Sector analysis')
+    figura.update_layout(height=300, width=400, title_text=f'Sector analysis')
     st.write(figura)
 with row2_spacer3:
 
@@ -98,7 +98,7 @@ with row2_spacer3:
                 df4,
                 x='Symbol', y='GICS Sub-Industry',
             )
-    figura2.update_layout(height=300, width=600, title_text=f'sub Sector analysis')
+    figura2.update_layout(height=300, width=400, title_text=f'sub Sector analysis')
     st.write(figura2)
 
 x=2
@@ -117,7 +117,7 @@ for i in lista:
                         line = dict(color = 'red', dash = 'dash'))
             hist.add_shape(type="line",x0=std_plus, x1=std_plus, y0 =0, y1=120 , xref='x', yref='y',
                         line = dict(color = 'red', dash = 'dash'))
-            hist.update_layout(height=300, width=600, title_text=f'histogram of {i}')
+            hist.update_layout(height=300, width=400, title_text=f'histogram of {i}')
             st.write(hist)
             
     else:
@@ -134,7 +134,7 @@ for i in lista:
                         line = dict(color = 'red', dash = 'dash'))
             hist.add_shape(type="line",x0=std_plus, x1=std_plus, y0 =0, y1=120 , xref='x', yref='y',
                         line = dict(color = 'red', dash = 'dash'))
-            hist.update_layout(height=300, width=600, title_text=f'histogram of {i}')
+            hist.update_layout(height=300, width=400, title_text=f'histogram of {i}')
             st.write(hist)
         
 
@@ -149,7 +149,7 @@ with row2_spacer1:
             y=i,
             trendline="ols",
         )
-        fig.update_layout(height=300, width=600, title_text=f'Beta and alpha analysis for SPY vs {i}')
+        fig.update_layout(height=300, width=400, title_text=f'Beta and alpha analysis for SPY vs {i}')
 
         st.write(fig)
         with row2_spacer3:
@@ -158,7 +158,7 @@ with row2_spacer1:
             x='Date',
             y=i,
             )
-            fig2.update_layout(height=300, width=600, title_text=f'Stock {i} two year performance')
+            fig2.update_layout(height=300, width=400, title_text=f'Stock {i} two year performance')
             st.write(fig2)
 
 
