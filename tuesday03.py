@@ -45,6 +45,11 @@ Filter_2 = st.sidebar.selectbox(
     ('30%','40%','50%','60%','70%','80%','90%','100%','Max%')
 )
 
+Filter_3 = st.sidebar.selectbox(
+    "select top sharpe and treynor results",
+    (5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)
+)
+
 
 
 
@@ -64,7 +69,7 @@ else:
     df
 
 df = df.sort_values(['sharpie', 'teynor'], ascending = False)
-df = df.iloc[0:6,:]
+df = df.iloc[0:Filter_3,:]
 
 st.table(df)
 
