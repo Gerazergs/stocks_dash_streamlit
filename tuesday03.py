@@ -3,21 +3,21 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 
-# #CSS
-# def local_css(file_name):
-#     with open(file_name) as f:
-#         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+#CSS
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-# def remote_css(url):
-#     st.markdown(f'<link href="{url}" rel="stylesheet">', unsafe_allow_html=True)    
+def remote_css(url):
+    st.markdown(f'<link href="{url}" rel="stylesheet">', unsafe_allow_html=True)    
 
-# def icon(icon_name):
-#     st.markdown(f'<i class="material-icons">{icon_name}</i>', unsafe_allow_html=True)
+def icon(icon_name):
+    st.markdown(f'<i class="material-icons">{icon_name}</i>', unsafe_allow_html=True)
 
-# local_css("style.css")
-# remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
+local_css("style.css")
+remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
 
-# button_clicked = st.button("Re-load")
+button_clicked = st.button("Re-load")
 
 
 df = pd.read_csv('my_new_portfolio.csv')
@@ -65,8 +65,6 @@ else:
 if Filter_2 != 'Max%':
     Filter_2 = int(Filter_2.replace('%',''))/100
     df =df[df['riesgo']<Filter_2]
-else:
-    df
 
 df = df.sort_values(['sharpie', 'teynor'], ascending = False)
 df = df.iloc[0:Filter_3,:]
