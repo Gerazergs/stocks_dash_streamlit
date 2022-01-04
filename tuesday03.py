@@ -50,9 +50,14 @@ Filter_3 = st.sidebar.selectbox(
     (range(6,30,2))
 )
 
-
-
-
+Filter_4 = st.sidebar.selectbox(
+    "Best Sharpe and treynor",
+    (True, False)
+)
+if Filter_4 == True:
+    Filter_4 =False
+else:
+    Filter_4=True
 st.write('greater than this risk selected:', Filter_1)
 st.write('lower than this risk selected:', Filter_2)
 if Filter_1 != 'Min%':
@@ -65,11 +70,11 @@ else:
 if Filter_2 != 'Max%':
     Filter_2 = int(Filter_2.replace('%',''))/100
     df =df[df['riesgo']<Filter_2]
-    df = df.sort_values(['sharpie', 'teynor'], ascending = False)
+    df = df.sort_values(['sharpie', 'teynor'], ascending = Filter_4)
     df = df.iloc[0:Filter_3,:]
     st.table(df)
 else:
-    df = df.sort_values(['sharpie', 'teynor'], ascending = False)
+    df = df.sort_values(['sharpie', 'teynor'], ascending = Filter_4)
     df = df.iloc[0:Filter_3,:]
     st.table(df)
 
