@@ -29,7 +29,7 @@ df3 = pd.read_csv('SPY500_normalizated.csv')
 
 df4 = pd.read_csv('sectors.csv')
 
-df5 = pd.read_csv('Full_procesated_SPY500.csv')
+df5 = pd.read_csv('procesatedSPY500.csv')
 df5.columns =['stocks','std','rendimiento','riesgo','coeficiente_variacion','beta','alfa','Riesgo_sistematico','Riesgo_no_sistematico','sharpie','teynor']
 
 
